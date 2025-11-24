@@ -13,3 +13,6 @@ Removing this license file directly violates terms and conditions of the softwar
 Individuals who remove or modify the license file will also carry the consequences.
 # test-assignment
 Repository for COMP.SE.200-2025-2026-1 Software Testing course testing assignment.
+
+
+[![Coverage Status](https://coveralls.io/repos/github/ejkallio/test-assignment/badge.svg?branch=main)](https://coveralls.io/github/ejkallio/test-assignment?branch=main)
