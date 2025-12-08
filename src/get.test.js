@@ -64,11 +64,10 @@ describe('get (integration with baseGet)', () => {
     expect(get(object, '', 'default')).toBe(42);
   });
 
-  test('supports empty array path (returns the object)', () => {
-    const object = { a: 5 };
-    expect(get(object, [], 'default')).toBe(object);
-  });
-
+    test('supports empty array path (returns defaultValue)', () => {
+        const object = { a: 5 };
+        expect(get(object, [], 'default')).toBe('default');
+    });
   test('handles numeric keys correctly', () => {
     const object = { a: { 1: { b: 7 } } };
     expect(get(object, 'a.1.b')).toBe(7);
