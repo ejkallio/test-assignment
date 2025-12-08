@@ -4,8 +4,18 @@ export default {
   transform: {
     '^.+\\.js$': 'babel-jest',
   },
+  collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.js',
-    '!src/**/.internal/**',
+    'src/add.js',
+    'src/filter.js',
+    'src/words.js',
+    'src/capitalize.js',
+    'src/endsWith.js',
+    'src/eq.js',
+    'src/reduce.js',
+    'src/isEmpty.js',
+    'src/get.js',
+    'src/ceil.js',
+    'src/.js',
   ]
 };
