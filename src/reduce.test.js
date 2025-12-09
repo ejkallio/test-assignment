@@ -7,9 +7,9 @@ describe('reduce (integration with arrayReduce, baseReduce, baseEach)', () => {
     expect(result).toBe(6);
   });
 
-  test('reduces an array without an explicit accumulator (uses first element)', () => {
+  test('reduces an array without an explicit accumulator', () => {
     const result = reduce([1, 2, 3], (sum, n) => sum + n);
-    expect(result).toBe(6); // 1 + 2 + 3
+    expect(result).toBe(6); 
   });
 
   test('supports different iteratee result types for arrays', () => {
@@ -25,7 +25,7 @@ describe('reduce (integration with arrayReduce, baseReduce, baseEach)', () => {
     expect(result).toBe(10);
   });
 
-  test('returns undefined for empty array without accumulator (matches Lodash behavior)', () => {
+  test('returns undefined for empty array without accumulator', () => {
     const result = reduce([], (acc, n) => acc + n);
     expect(result).toBeUndefined();
   });
@@ -36,10 +36,10 @@ describe('reduce (integration with arrayReduce, baseReduce, baseEach)', () => {
     expect(result).toBe(6);
   });
 
-  test('reduces an object without explicit accumulator (first key becomes initial)', () => {
+  test('reduces an object without explicit accumulator', () => {
     const obj = { a: 2, b: 3, c: 4 };
     const result = reduce(obj, (acc, value) => acc + value);
-    expect(result).toBe(9); // 2 + 3 + 4
+    expect(result).toBe(9); 
   });
 
   test('iteratee receives key for object reduction', () => {
@@ -65,7 +65,6 @@ describe('reduce (integration with arrayReduce, baseReduce, baseEach)', () => {
       {}
     );
 
-    // order is not guaranteed, so we check sets
     expect(result).toEqual({
       1: expect.arrayContaining(['a', 'c']),
       2: ['b']
@@ -102,10 +101,9 @@ describe('reduce (integration with arrayReduce, baseReduce, baseEach)', () => {
     }, 0);
 
     expect(calls.length).toBe(2);
-    expect(calls[0][0]).toBe(0);     // accumulator
-    expect(calls[0][1]).toBe(10);    // value
-    expect(calls[0][2]).toBe(0);     // index
-    expect(calls[0][3]).toBe(array); // collection
+    expect(calls[0][0]).toBe(0);     
+    expect(calls[0][2]).toBe(0);    
+    expect(calls[0][3]).toBe(array); 
   });
 
   test('handles a deeply nested accumulator', () => {

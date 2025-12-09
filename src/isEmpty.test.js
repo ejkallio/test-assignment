@@ -2,7 +2,6 @@ import isEmpty from './isEmpty.js';
 
 describe('isEmpty', () => {
 
-  // --- Null / undefined / primitives ---
   test('returns true for null or undefined', () => {
     expect(isEmpty(null)).toBe(true);
     expect(isEmpty(undefined)).toBe(true);
@@ -15,7 +14,6 @@ describe('isEmpty', () => {
     expect(isEmpty(42)).toBe(true);
   });
 
-  // --- Strings ---
   test('empty string is empty', () => {
     expect(isEmpty('')).toBe(true);
   });
@@ -24,7 +22,6 @@ describe('isEmpty', () => {
     expect(isEmpty('abc')).toBe(false);
   });
 
-  // --- Arrays ---
   test('empty array is empty', () => {
     expect(isEmpty([])).toBe(true);
   });
@@ -33,7 +30,6 @@ describe('isEmpty', () => {
     expect(isEmpty([1, 2, 3])).toBe(false);
   });
 
-  // --- Arguments object ---
   test('empty arguments object is empty', () => {
     function fn() { return isEmpty(arguments); }
     expect(fn()).toBe(true);
@@ -44,7 +40,6 @@ describe('isEmpty', () => {
     expect(fn(1, 2)).toBe(false);
   });
 
-  // --- Typed arrays / buffers ---
   test('empty typed array is empty', () => {
     expect(isEmpty(new Uint8Array())).toBe(true);
   });
@@ -61,7 +56,6 @@ describe('isEmpty', () => {
     expect(isEmpty(Buffer.from([1,2,3]))).toBe(false);
   });
 
-  // --- Maps and Sets ---
   test('empty Map or Set is empty', () => {
     expect(isEmpty(new Map())).toBe(true);
     expect(isEmpty(new Set())).toBe(true);
@@ -74,7 +68,6 @@ describe('isEmpty', () => {
     expect(isEmpty(set)).toBe(false);
   });
 
-  // --- Plain objects ---
   test('empty object is empty', () => {
     expect(isEmpty({})).toBe(true);
   });
@@ -90,7 +83,6 @@ describe('isEmpty', () => {
     expect(isEmpty(obj)).toBe(true);
   });
 
-  // --- Complex nested structures ---
   test('nested cart items object', () => {
     const cart = { items: [] };
     expect(isEmpty(cart.items)).toBe(true);
@@ -98,7 +90,6 @@ describe('isEmpty', () => {
     expect(isEmpty(cart.items)).toBe(false);
   });
 
-  // --- Edge cases ---
   test('object with inherited properties but no own properties', () => {
     const proto = { x: 1 };
     const obj = Object.create(proto);
