@@ -15,4 +15,4 @@ Individuals who remove or modify the license file will also carry the consequenc
 Repository for COMP.SE.200-2025-2026-1 Software Testing course testing assignment.
 
 
-[![Coverage Status](https://coveralls.io/repos/github/ejkallio/test-assignment/badge.svg?branch=main)](https://coveralls.io/github/ejkallio/test-assignment?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/ejkallio/test-assignment/badge.svg?branch=main&kill_cache=1)](https://coveralls.io/github/ejkallio/test-assignment?branch=main)
